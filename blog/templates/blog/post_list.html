@@ -6,34 +6,12 @@
         <div>
             <h1><a href="">Sunduk Blog</a></h1>
         </div>
-
-        <div>
-            <p>published: 15.06.2016, 16:17</p>
-            <h2><a href="">My first post</a></h2>
-            <p>1. Автоматизация тестирования в WRIKE
-            — Концепция пирамиды
-            — Юнит тестирование
-            2. Интеграционное тестирование
-            — Html unit tests
-            3. UI тестирование
-            — Selenium
-            — Кроссбраузерность
-            — Automation testing fragility
-            — Grid технология
-            — Allure reporting
-            4. Continous Integration
-            — Deployment process
-</p>
-        </div>
-
-        <div>
-            <p>published: 15.06.2016, 16:18</p>
-            <h2><a href="">My second post</a></h2>
-            <p>— Как строилось тестирование в Badoo три года назад и почему казалось, что это здорово
-            — С какими проблемами встретились и почему стали понимать, что нужно что-то совершенствовать
-            — Как изменились и улучшились процессы за последние три года и как это помогло
-            — Какие сложности всё ещё есть и как планируется их решать.
-</p>
-        </div>
+        {% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaks }}</p>
+    </div>
+{% endfor %}
     </body>
 </html>
